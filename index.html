@@ -3,60 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Noah Grynko — Élève seconde MTNE, futur Bac Pro CIEL/MELEC</title>
-<meta name="description" content="Portfolio de Noah Grynko, élève en seconde professionnelle MTNE au lycée Ampère de Josselin, à la recherche d'un stage d'observation en électricité, informatique et réseaux.">
+
+<script>
+(function () {
+  try {
+    var stored = localStorage.getItem("theme-preference");
+    if (stored === "light" || stored === "dark") {
+      document.documentElement.setAttribute("data-theme", stored);
+    }
+  } catch (e) {}
+})();
+</script>
+
+<title>Noah Grynko — CV &amp; portfolio, élève seconde MTNE</title>
+<meta name="description" content="CV interactif de Noah Grynko, élève en seconde professionnelle MTNE au lycée Ampère (Josselin) : parcours, expériences, compétences, projets et recherche de stage en électricité, informatique et réseaux.">
 <meta name="author" content="Noah Grynko">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://noahgrynko.github.io/Noah-cv/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Noah Grynko — Élève seconde MTNE, futur Bac Pro CIEL/MELEC">
-<meta property="og:description" content="Portfolio de Noah Grynko, élève en seconde professionnelle MTNE au lycée Ampère de Josselin, à la recherche d'un stage d'observation en électricité, informatique et réseaux.">
+<meta property="og:title" content="Noah Grynko — CV & portfolio, élève seconde MTNE">
+<meta property="og:description" content="Parcours, expériences, compétences et projets de Noah Grynko, à la recherche d'un stage d'observation en électricité, informatique et réseaux.">
 <meta property="og:url" content="https://noahgrynko.github.io/Noah-cv/">
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#faf8f4">
 
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <a class="skip-link" href="#main">Aller au contenu principal</a>
 
+<div class="scroll-progress" aria-hidden="true"><span id="scrollProgressBar"></span></div>
+
 <header class="site-header">
   <div class="container header-inner">
-    <a href="#accueil" class="logo">Noah<span>Grynko</span></a>
-
-    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Ouvrir le menu de navigation">
-      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-    </button>
+    <a href="#accueil" class="logo">
+      <span class="logo-prompt">~/</span>noah<span class="logo-cursor" aria-hidden="true">_</span>
+    </a>
 
     <nav id="primaryNav" class="primary-nav" aria-label="Navigation principale">
       <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#a-propos">À propos</a></li>
-        <li><a href="#experiences">Expériences</a></li>
-        <li><a href="#formation">Formation</a></li>
-        <li><a href="#competences">Compétences</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#accueil" data-nav-link>Accueil</a></li>
+        <li><a href="#a-propos" data-nav-link>À propos</a></li>
+        <li><a href="#parcours" data-nav-link>Parcours</a></li>
+        <li><a href="#experiences" data-nav-link>Expériences</a></li>
+        <li><a href="#competences" data-nav-link>Compétences</a></li>
+        <li><a href="#projets" data-nav-link>Projets</a></li>
+        <li><a href="#motivation" data-nav-link>Motivation</a></li>
+        <li><a href="#contact" data-nav-link>Contact</a></li>
       </ul>
     </nav>
+
+    <div class="header-tools">
+      <div class="theme-switch" role="group" aria-label="Choisir le thème">
+        <button type="button" class="theme-btn" data-theme-choice="system" aria-pressed="false" title="Thème système">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 20h8M12 16v4"/></svg>
+          <span class="visually-hidden">Thème système</span>
+        </button>
+        <button type="button" class="theme-btn" data-theme-choice="light" aria-pressed="false" title="Thème clair">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.6 4.6l1.7 1.7M17.7 17.7l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.6 19.4l1.7-1.7M17.7 6.3l1.7-1.7"/></svg>
+          <span class="visually-hidden">Thème clair</span>
+        </button>
+        <button type="button" class="theme-btn" data-theme-choice="dark" aria-pressed="false" title="Thème sombre">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5Z"/></svg>
+          <span class="visually-hidden">Thème sombre</span>
+        </button>
+      </div>
+
+      <a class="icon-link" href="https://github.com/noahgrynko/Noah-cv" target="_blank" rel="noopener noreferrer" aria-label="Voir le code source de ce site sur GitHub">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.73.5.98 5.24.98 11.52c0 4.94 3.2 9.13 7.65 10.61.56.1.76-.24.76-.54v-1.9c-3.11.68-3.77-1.5-3.77-1.5-.5-1.29-1.24-1.63-1.24-1.63-1.02-.7.08-.69.08-.69 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.48-.28-5.09-1.24-5.09-5.53 0-1.22.43-2.22 1.15-3-.12-.29-.5-1.42.11-2.95 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.53.23 2.66.11 2.95.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.24-5.11 5.52.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.77.54 4.44-1.48 7.64-5.67 7.64-10.61C23.02 5.24 18.27.5 12 .5Z"/></svg>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Ouvrir le menu de navigation">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+    </div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- HERO -->
+  <!-- ACCUEIL -->
   <section id="accueil" class="hero">
-    <div class="container hero-inner">
-      <p class="eyebrow">Élève en Seconde Professionnelle MTNE — Lycée Ampère, Josselin</p>
-      <h1>Noah Grynko</h1>
-      <p class="hero-tagline">Futur Bac Pro CIEL ou MELEC, passionné d'électricité, d'informatique et de réseaux. À la recherche d'un stage d'observation pour découvrir le monde du travail.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="assets/documents/CV_Noah_Grynko.pdf" download>Télécharger mon CV</a>
-        <a class="btn btn-secondary" href="#contact">Me contacter</a>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Seconde professionnelle MTNE · Lycée Ampère, Josselin</p>
+        <h1>Noah Grynko</h1>
+        <p class="hero-tagline">
+          Je m'intéresse au code, aux réseaux et à l'électricité — et j'apprends surtout en construisant des choses.
+          Ce site, par exemple : conçu, codé et mis en ligne par mes soins.
+        </p>
+        <p class="hero-status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Disponible pour un stage d'observation du 23&nbsp;novembre au 12&nbsp;décembre&nbsp;2026
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Me contacter</a>
+          <a class="btn btn-ghost" href="#parcours">Voir mon parcours</a>
+          <a class="btn btn-ghost" href="#projets">Découvrir mes projets</a>
+        </div>
+      </div>
+
+      <div class="hero-panel" aria-hidden="true">
+        <div class="panel-chrome">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="panel-body">
+          <p><span class="prompt">noah@lycee</span><span class="colon">:~$</span> whoami</p>
+          <p class="out">seconde pro · MTNE<br>lycée ampère, josselin</p>
+          <p><span class="prompt">noah@lycee</span><span class="colon">:~$</span> objectif</p>
+          <p class="out">bac pro ciel <span class="dim">ou</span> melec</p>
+          <p><span class="prompt">noah@lycee</span><span class="colon">:~$</span> recherche</p>
+          <p class="out">stage d'observation<br>23 nov → 12 déc 2026<span class="cursor" aria-hidden="true">▌</span></p>
+        </div>
       </div>
     </div>
   </section>
@@ -64,70 +131,78 @@
   <!-- A PROPOS -->
   <section id="a-propos" class="section">
     <div class="container">
-      <h2><span class="section-number">01</span> À propos</h2>
-      <div class="section-content prose">
-        <p>Actuellement en seconde professionnelle MTNE au lycée Ampère de Josselin, je me destine à un Bac Pro CIEL (Cybersécurité, Informatique et Réseaux, Électronique) ou MELEC (Métiers de l'Électricité et de ses Environnements Connectés).</p>
-        <p>En dehors des cours, je consacre beaucoup de temps à l'informatique : création de sites web, apprentissage du code et découverte de l'hébergement et des VPS. Je pratique aussi le sport régulièrement.</p>
-        <p>Sérieux, autonome et toujours ponctuel, j'aime chercher et tester par moi-même pour progresser, et je suis motivé à l'idée de découvrir de nouveaux métiers sur le terrain.</p>
+      <p class="section-index">01</p>
+      <h2>À propos</h2>
+      <div class="section-content prose reveal-group">
+        <p class="reveal-item">Je suis actuellement en seconde professionnelle MTNE au lycée Ampère de Josselin, avec l'objectif de poursuivre en Bac Pro CIEL (Cybersécurité, Informatique et Réseaux, Électronique) ou MELEC (Métiers de l'Électricité et de ses Environnements Connectés) — le choix se précisera avec mes prochains stages.</p>
+        <p class="reveal-item">En dehors des cours, je passe beaucoup de temps sur l'informatique : je crée des sites web, j'apprends à coder et je découvre petit à petit comment fonctionnent l'hébergement et les VPS, en testant par moi-même. Je pratique aussi le sport régulièrement.</p>
+        <p class="reveal-item">Je me décris comme sérieux, autonome et toujours ponctuel. J'aime comprendre comment les choses marchent en les manipulant directement, et c'est cette curiosité qui me pousse aujourd'hui à chercher un stage pour voir ces métiers de près.</p>
       </div>
     </div>
   </section>
 
-  <!-- EXPERIENCES -->
-  <section id="experiences" class="section section-alt">
+  <!-- PARCOURS / FORMATION -->
+  <section id="parcours" class="section section-alt">
     <div class="container">
-      <h2><span class="section-number">02</span> Expériences professionnelles</h2>
-      <p class="section-note">Stages d'observation réalisés dans le cadre de la scolarité.</p>
+      <p class="section-index">02</p>
+      <h2>Parcours &amp; formation</h2>
 
       <ol class="timeline">
         <li class="timeline-item">
-          <div class="timeline-date">2024 – 2025</div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">2026 – 2027 <span class="badge">En cours</span></div>
           <div class="timeline-content">
-            <h3>Stage d'observation — Magre</h3>
-            <p class="timeline-meta">Questembert · Bâtiment et électricité</p>
-            <p>Découverte du travail sur un chantier et de l'électricité dans le bâtiment.</p>
+            <h3>Seconde professionnelle MTNE</h3>
+            <p class="timeline-meta">Lycée Ampère — Josselin</p>
+            <p>Objectif : poursuivre en Bac Pro CIEL ou MELEC, selon les découvertes faites en stage.</p>
           </div>
         </li>
         <li class="timeline-item">
-          <div class="timeline-date">2024 – 2025</div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">2027 – 2030 <span class="badge badge-muted">À confirmer</span></div>
           <div class="timeline-content">
-            <h3>Stage d'observation — Blue Road</h3>
-            <p class="timeline-meta">Malestroit · Transport</p>
-            <p>Découverte du secteur du transport, autonomie et adaptation à un nouveau milieu.</p>
-          </div>
-        </li>
-        <li class="timeline-item">
-          <div class="timeline-date">2025 – 2026</div>
-          <div class="timeline-content">
-            <h3>Stage d'observation — Clinique</h3>
-            <p class="timeline-meta">Seine-Saint-Denis (93) · Santé</p>
-            <p>Découverte du fonctionnement d'un établissement de santé : aide auprès du kinésithérapeute, des infirmiers et du secrétariat. Gain d'autonomie et de responsabilité.</p>
+            <h3>Bac Pro CIEL ou MELEC</h3>
+            <p class="timeline-meta">Établissement à définir</p>
+            <p>Poursuite d'études après la seconde. La spécialité définitive dépendra de mon ressenti sur le terrain.</p>
           </div>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- FORMATION -->
-  <section id="formation" class="section">
+  <!-- EXPERIENCES -->
+  <section id="experiences" class="section">
     <div class="container">
-      <h2><span class="section-number">03</span> Formation</h2>
+      <p class="section-index">03</p>
+      <h2>Expériences professionnelles</h2>
+      <p class="section-note">Trois stages d'observation réalisés dans le cadre de ma scolarité, dans des secteurs volontairement différents.</p>
 
       <ol class="timeline">
         <li class="timeline-item">
-          <div class="timeline-date">2026 – 2027 <span class="badge">En cours</span></div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">2024 – 2025</div>
           <div class="timeline-content">
-            <h3>Seconde professionnelle MTNE</h3>
-            <p class="timeline-meta">Lycée Ampère — Josselin</p>
-            <p>Objectif : Bac Pro CIEL ou MELEC.</p>
+            <h3>Stage d'observation — Magre</h3>
+            <p class="timeline-meta">Questembert · Bâtiment &amp; électricité</p>
+            <p>Découverte du travail sur un chantier et d'une première approche concrète de l'électricité dans le bâtiment.</p>
           </div>
         </li>
         <li class="timeline-item">
-          <div class="timeline-date">2027 – 2030</div>
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">2024 – 2025</div>
           <div class="timeline-content">
-            <h3>Poursuite d'études</h3>
-            <p class="timeline-meta">Bac Pro CIEL ou MELEC (à confirmer)</p>
-            <p>Poursuite d'études après la seconde.</p>
+            <h3>Stage d'observation — Blue Road</h3>
+            <p class="timeline-meta">Malestroit · Transport</p>
+            <p>Un secteur très différent du précédent, qui m'a appris à m'adapter rapidement à un nouveau milieu.</p>
+          </div>
+        </li>
+        <li class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-date">2025 – 2026</div>
+          <div class="timeline-content">
+            <h3>Stage d'observation — Clinique</h3>
+            <p class="timeline-meta">Seine-Saint-Denis (93) · Santé</p>
+            <p>Aide auprès du kinésithérapeute, des infirmiers et du secrétariat. Cette expérience m'a rendu plus autonome et plus responsable.</p>
           </div>
         </li>
       </ol>
@@ -137,30 +212,52 @@
   <!-- COMPETENCES -->
   <section id="competences" class="section section-alt">
     <div class="container">
-      <h2><span class="section-number">04</span> Compétences &amp; langues</h2>
+      <p class="section-index">04</p>
+      <h2>Compétences</h2>
 
-      <div class="grid-2">
-        <div>
-          <h3 class="subheading">Compétences</h3>
+      <div class="skills-grid">
+        <div class="skill-group reveal-item">
+          <h3 class="subheading">Développement web</h3>
           <ul class="tag-list">
             <li class="tag">Sites web</li>
             <li class="tag">Code</li>
-            <li class="tag">Hébergement et VPS (débutant)</li>
-            <li class="tag">Bases de l'électricité</li>
-            <li class="tag">Autonomie et ponctualité</li>
           </ul>
         </div>
+        <div class="skill-group reveal-item">
+          <h3 class="subheading">Systèmes &amp; hébergement</h3>
+          <ul class="tag-list">
+            <li class="tag">Hébergement <span class="tag-note">débutant</span></li>
+            <li class="tag">VPS <span class="tag-note">débutant</span></li>
+          </ul>
+        </div>
+        <div class="skill-group reveal-item">
+          <h3 class="subheading">Électricité</h3>
+          <ul class="tag-list">
+            <li class="tag">Bases de l'électricité</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal-item">
+          <h3 class="subheading">Qualités personnelles</h3>
+          <ul class="tag-list">
+            <li class="tag">Autonomie</li>
+            <li class="tag">Ponctualité</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="skills-secondary">
         <div>
           <h3 class="subheading">Langues</h3>
           <ul class="lang-list">
             <li><span>Français</span><span class="lang-level">Natif</span></li>
             <li><span>Anglais</span><span class="lang-level">Scolaire</span></li>
           </ul>
-
-          <h3 class="subheading" style="margin-top:2rem">Centres d'intérêt</h3>
+        </div>
+        <div>
+          <h3 class="subheading">Centres d'intérêt</h3>
           <ul class="tag-list">
             <li class="tag">Sport</li>
-            <li class="tag">Informatique (sites web, code)</li>
+            <li class="tag">Informatique <span class="tag-note">sites web, code, hébergement</span></li>
           </ul>
         </div>
       </div>
@@ -170,61 +267,118 @@
   <!-- PROJETS -->
   <section id="projets" class="section">
     <div class="container">
-      <h2><span class="section-number">05</span> Projets personnels</h2>
-      <div class="card">
-        <h3>Développement web &amp; découverte de l'hébergement</h3>
-        <p>Création de sites web, apprentissage du code, et découverte de l'hébergement et des VPS, en autodidacte et en dehors des cours.</p>
+      <p class="section-index">05</p>
+      <h2>Projets</h2>
+      <p class="section-note">Des projets personnels, à mon niveau de débutant — pas de fausse expertise, juste ce que j'ai réellement fait ou en train d'apprendre.</p>
+
+      <div class="project-grid">
+        <article class="project-card reveal-item">
+          <div class="project-card-head">
+            <h3>Ce site</h3>
+            <span class="badge badge-live">En ligne</span>
+          </div>
+          <p>Mon CV et portfolio personnel — celui que vous consultez actuellement. Pensé, codé et déployé par mes soins.</p>
+          <dl class="project-meta">
+            <div><dt>Technologies</dt><dd>HTML, CSS, JavaScript</dd></div>
+            <div><dt>Objectif</dt><dd>Apprendre le développement web en construisant quelque chose de réel</dd></div>
+            <div><dt>Ce que j'ai appris</dt><dd>Structurer un site, le rendre responsive, utiliser Git/GitHub et automatiser sa mise en ligne</dd></div>
+          </dl>
+          <div class="project-links">
+            <a href="https://github.com/noahgrynko/Noah-cv" target="_blank" rel="noopener noreferrer">Code source
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-item">
+          <div class="project-card-head">
+            <h3>Hébergement &amp; VPS</h3>
+            <span class="badge badge-muted">En cours d'apprentissage</span>
+          </div>
+          <p>Un apprentissage personnel, en dehors des cours : comprendre comment fonctionne un serveur, comment on héberge un site et à quoi sert un VPS.</p>
+          <dl class="project-meta">
+            <div><dt>Statut</dt><dd>Projet personnel, débutant</dd></div>
+            <div><dt>Objectif</dt><dd>Comprendre l'hébergement de bout en bout, au-delà de GitHub Pages</dd></div>
+          </dl>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- LETTRE DE MOTIVATION -->
+  <!-- MOTIVATION -->
   <section id="motivation" class="section section-alt">
     <div class="container">
-      <h2><span class="section-number">06</span> Motivation</h2>
-      <div class="section-content prose">
-        <p>Je recherche un stage d'observation de seconde pour mieux connaître le monde du travail et les métiers de l'électricité, de l'informatique et des réseaux, en vue de poursuivre en Bac Pro CIEL ou MELEC.</p>
-        <p>J'ai déjà réalisé trois stages d'observation dans des secteurs très différents (bâtiment/électricité, transport, santé), ce qui m'a appris à m'adapter rapidement à de nouveaux environnements et à gagner en autonomie.</p>
-      </div>
+      <p class="section-index">06</p>
+      <h2>Motivation</h2>
+      <p class="section-note">Ma lettre de motivation, telle quelle — pas besoin de télécharger un PDF pour la lire.</p>
 
-      <details class="letter-details">
-        <summary>Lire la lettre de motivation complète</summary>
-        <div class="prose letter-body">
-          <p><strong>Objet :</strong> demande de stage d'observation de seconde — du 23 novembre au 12 décembre 2026</p>
+      <article class="letter">
+        <header class="letter-head">
+          <div>
+            <p class="letter-label">Objet</p>
+            <p class="letter-object">Demande de stage d'observation de seconde — du 23 novembre au 12 décembre 2026</p>
+          </div>
+        </header>
+
+        <div class="letter-body prose">
           <p>Madame, Monsieur,</p>
           <p>Je suis en seconde MTNE au lycée Ampère de Josselin et je cherche un stage du 23 novembre au 12 décembre 2026. J'aimerais mieux connaître le monde du travail et les métiers de l'électricité, de l'informatique et des réseaux, parce que je voudrais continuer en Bac Pro CIEL ou MELEC.</p>
           <p>J'ai déjà fait trois stages. Le premier chez Magre, à Questembert, une entreprise du bâtiment qui fait aussi de l'électricité. J'ai pu voir comment on travaille sur un chantier et à quoi ressemble l'électricité dans le bâtiment. Le deuxième était chez Blue Road, à Malestroit, dans le transport. C'était très différent, et ça m'a appris à m'adapter. Le troisième stage s'est déroulé dans une clinique en Seine-Saint-Denis, où j'ai eu l'occasion d'aider le kinésithérapeute, les infirmiers ainsi que le secrétariat. Cela m'a permis de devenir plus autonome et à être plus responsable.</p>
           <p>En dehors du lycée, je fais beaucoup d'informatique chez moi en plus du sport. Je crée des sites web, j'apprends à coder et j'essaie de comprendre comment marchent l'hébergement et les VPS. Je débute encore, mais j'aime chercher et tester par moi-même, et j'ai envie d'en apprendre plus.</p>
           <p>Je suis motivé, sérieux et toujours à l'heure, et j'aime travailler. Je souhaite faire ce stage chez vous pour découvrir votre métier, en apprendre plus et mettre ma motivation au service des tâches que vous pourrez me confier.</p>
           <p>Merci.</p>
-          <p>Cordialement,<br>Noah Grynko</p>
         </div>
-      </details>
+
+        <footer class="letter-signature">
+          <p>Cordialement,</p>
+          <p class="signature-name">Noah Grynko</p>
+        </footer>
+      </article>
     </div>
   </section>
 
   <!-- CONTACT -->
   <section id="contact" class="section contact-section">
     <div class="container">
-      <h2><span class="section-number">07</span> Contact</h2>
-      <p class="section-note">Disponible pour un stage d'observation du 23 novembre au 12 décembre 2026.</p>
+      <p class="section-index">07</p>
+      <h2>Contact</h2>
+      <p class="section-note">Disponible pour un stage d'observation du 23 novembre au 12 décembre 2026 — n'hésitez pas à m'écrire.</p>
 
-      <ul class="contact-list">
-        <li>
-          <span class="contact-label">Email</span>
-          <a href="mailto:noah.grynko@gmail.com">noah.grynko@gmail.com</a>
-        </li>
-        <li>
-          <span class="contact-label">Téléphone</span>
-          <a href="tel:+33695922960">06 95 92 29 60</a>
-        </li>
-        <li>
-          <span class="contact-label">Localisation</span>
-          <span>Malestroit (56140)</span>
-        </li>
-      </ul>
+      <div class="contact-grid">
+        <ul class="contact-list">
+          <li>
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:noah.grynko@gmail.com">noah.grynko@gmail.com</a>
+            </div>
+            <button type="button" class="copy-btn" data-copy="noah.grynko@gmail.com" aria-label="Copier l'adresse email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4H5.5A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>
+              <span class="copy-feedback" role="status" aria-live="polite"></span>
+            </button>
+          </li>
+          <li>
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M6.5 3h3l1.5 4.5-2 1.5a12 12 0 0 0 6 6l1.5-2 4.5 1.5v3a2 2 0 0 1-2.2 2A18 18 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z"/></svg>
+            <div>
+              <span class="contact-label">Téléphone</span>
+              <a href="tel:+33695922960">06 95 92 29 60</a>
+            </div>
+          </li>
+          <li>
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <div>
+              <span class="contact-label">Localisation</span>
+              <span>Malestroit (56140)</span>
+            </div>
+          </li>
+        </ul>
 
-      <a class="btn btn-primary" href="mailto:noah.grynko@gmail.com?subject=Demande%20de%20stage%20d%27observation">Envoyer un email</a>
+        <div class="contact-cta">
+          <a class="btn btn-primary btn-lg" href="mailto:noah.grynko@gmail.com?subject=Demande%20de%20stage%20d%27observation">Envoyer un email</a>
+          <a class="btn btn-ghost" href="assets/documents/CV_Noah_Grynko.pdf" download>Télécharger le CV (PDF)</a>
+          <p class="contact-hint">Le CV en PDF est fourni à titre pratique — toutes les informations importantes sont déjà sur cette page.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -236,6 +390,7 @@
     <ul class="footer-links">
       <li><a href="mailto:noah.grynko@gmail.com">Email</a></li>
       <li><a href="tel:+33695922960">Téléphone</a></li>
+      <li><a href="https://github.com/noahgrynko/Noah-cv" target="_blank" rel="noopener noreferrer">GitHub</a></li>
       <li><a href="assets/documents/CV_Noah_Grynko.pdf" download>CV (PDF)</a></li>
     </ul>
   </div>
