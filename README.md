@@ -37,9 +37,9 @@ Pour modifier le contenu :
 
 ## Déploiement (GitHub Pages)
 
-Le déploiement est automatisé via GitHub Actions (`.github/workflows/deploy.yml`) : chaque push sur la branche `main` reconstruit et republie le site sur GitHub Pages, sans étape manuelle.
+Le déploiement est automatisé via GitHub Actions (`.github/workflows/deploy.yml`) : chaque push sur la branche par défaut du dépôt (actuellement `claude/noah-cv-site-60yqt6`, ou `main` si le dépôt est réorganisé plus tard) reconstruit et republie le site sur GitHub Pages, sans étape manuelle.
 
-Une fois la branche fusionnée dans `main`, le site est disponible à l'adresse :
+Le site est disponible à l'adresse :
 
 ```
 https://noahgrynko.github.io/Noah-cv/
