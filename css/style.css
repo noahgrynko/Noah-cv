@@ -195,14 +195,6 @@ dd { margin: 0 0 0.9rem; color: var(--text-muted); }
 .theme-btn:hover { color: var(--text); }
 .theme-btn[aria-pressed="true"] { background: var(--surface); color: var(--accent); box-shadow: var(--shadow-sm); }
 
-.icon-link {
-  display: flex; align-items: center; justify-content: center;
-  width: 34px; height: 34px; border-radius: 999px; color: var(--text-muted);
-  transition: color var(--transition), background var(--transition);
-}
-.icon-link svg { width: 18px; height: 18px; }
-.icon-link:hover { color: var(--accent); background: var(--surface-alt); }
-
 .nav-toggle {
   display: none; flex-direction: column; justify-content: center; gap: 5px;
   width: 38px; height: 38px; background: none; border: none; cursor: pointer;
@@ -363,13 +355,6 @@ dd { margin: 0 0 0.9rem; color: var(--text-muted); }
 .project-card-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.6rem; }
 .project-card-head h3 { margin: 0; }
 .project-meta { margin-top: 1.1rem; }
-.project-links { margin-top: 1.2rem; }
-.project-links a {
-  display: inline-flex; align-items: center; gap: 0.35rem; font-weight: 600; text-decoration: none;
-  font-size: 0.92rem;
-}
-.project-links svg { width: 14px; height: 14px; transition: transform 200ms ease; }
-.project-links a:hover svg { transform: translate(2px, -2px); }
 
 /* =========================================================
    Letter
@@ -470,7 +455,6 @@ dd { margin: 0 0 0.9rem; color: var(--text-muted); }
   .nav-toggle[aria-expanded="true"] .bar:nth-child(2) { opacity: 0; }
   .nav-toggle[aria-expanded="true"] .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  .icon-link { display: none; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .skills-secondary { grid-template-columns: 1fr; }
   .letter { padding: 1.6rem 1.4rem; }
